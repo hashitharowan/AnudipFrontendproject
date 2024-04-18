@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .Login-form
+        {
+            width: 400px;
+            height: 350px;
+            padding: 15px;
+            margin: 0 auto;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: rgb(0, 113, 128);
+            box-shadow: 0 0 10px rgb(47, 234, 255);
+        }
+        .container
+        {
+            margin-top: 100px;
+        }
+        .border-control
+        {
+            border: 1px solid black;
+        }
+        
+        .para
+        {
+            margin-top: 10px;
+        }
+        .but-down
+        {
+            margin-top: 20px;
+            
+        }
+
+    </style>
+</head>
+<body style="background-color:rgb(230, 218, 218);">
+      <!---Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark " id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">SPICES</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto ">
+          <li class="nav-item">
+            <a class="nav-link " href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="product.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="exlogin.html">Log In</a>
+          </li>
+
+        </ul>
+        <button class="btn p-2 my-lg-0 my-2"><a href="./exsignup.html">Sign In</a></button>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container">
+        <form class="Login-form">
+            <h1>Login</h1>
+        
+            
+        <div class="form-group">
+            <label for="emailid">Email</label>
+            <input type="email" id="emailid" name="email" placeholder="abc@gmail.com" required class="form-control border-control"/>
+        </div>
+
+        <div class="form-group">
+            <label for="pwdid">Password</label>
+            <input type="password" id="pwdid" name="pwd" placeholder="Enter password" required class="form-control border-control"/>
+        </div>
+        <input type="button" class="btn btn-success but-down form-control border-control" 
+            onclick="login()" value="Login"/>
+        <br>
+        <p class="para">Not have an account? <a href="exsignup.html">SignIn</a></p>
+        </form>
+    </div>
+    <script type="text/javascript">
+    function login()
+    {
+        var vemail=document.getElementById("emailid").value;
+        var vpwd=document.getElementById("pwdid").value;
+
+            let userobjarr=[
+            {em:'raju123@gmail.com',pwd:12345},
+            {em:'ajay@gmail.com',pwd:54321},
+            {em:'ahamed2024@gmail.com',pwd:99887},
+            {em:'davi231@gmail.com',pwd:66554}
+            ];
+            
+            var isMatching=false;
+            for(var i=0;i<userobjarr.length;i++)
+            {
+                if(userobjarr[i].em==vemail&&userobjarr[i].pwd==vpwd)
+                {
+                    isMatching=true;
+                    break;
+                }
+            }
+            if(isMatching==true)
+                alert("Login sucessful");
+            else
+                alert("Incorrect email or password");
+    }
+
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer style="position: sticky;">Copyright @SPICES 2024</footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
